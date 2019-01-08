@@ -1,0 +1,83 @@
+% Это основной файл, в который включаются остальные
+% чтобы было можно редактировать по частям.
+% Шаблон создан: Апр 12 2002
+
+\documentclass[a4paper,11pt]{article}
+%%%% document preamble start
+%\usepackage[utf-8]{inputenc}
+%\usepackage[koi8-r]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[dvips]{graphicx}
+\usepackage{longtable}
+
+% Index generation package require:
+% 1. '\usepackage{makeidx}'
+% 2. '\makeindex' in preamble (between document style definition and '\begin{dosument}' )
+% 3. '\printindex' at the place where index should appear
+% 4. running latex $file.tex
+% 5. running latex $file.idx
+% 6. running latex $file.tex
+%
+\usepackage{makeidx}
+\makeindex
+
+
+%
+% очень плохая вещь! подрезаем поля по умолчанию :(
+%
+\addtolength{\hoffset}{-0.5cm}
+\addtolength{\textwidth}{1.5cm}
+\addtolength{\topmargin}{-11pt}
+\addtolength{\footskip}{-10pt}
+%
+% конец плохой вещи ;)
+%
+
+
+%
+% Расстановка переносов в "сложных" словах
+%
+\input ehyphen.tex
+
+%разрешить перенос двух букв (недопустимо в ангельском)
+\righthyphenmin=2
+
+\author{NetHack club teamwork}
+\title{ RootKit RFC, part 2\\Описание технических требований к качественному rootkit, часть 2.\\Аналитическая статья.\\Version 1.0 .}
+%%%% document preamble end
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+%% пока нет таблиц и картинок это только портит содержание документа. закоментировано.
+%\listoffigures
+%\listoftables
+\newpage
+\input items/0000_intro.utf8.tex
+% закоментировано за ненадобностью
+%\newpage
+%\input items/0001_2do,comments.utf8.tex
+\newpage
+\input items/0020_coding_language.utf8.tex
+\newpage
+\input items/0030_architecture.utf8.tex
+\newpage
+\input items/0040_protocol.utf8.tex
+%\newpage
+%\input items/.utf8.tex
+%\newpage
+%\input items/.utf8.tex
+%\newpage
+%\input items/.utf8.tex
+%\newpage
+%\input items/2split.utf8.tex
+\newpage
+\input items/9100_bibliography.utf8.tex
+%\newpage
+%\section{Предметный указатель}
+%\printindex
+\end{document}
+
